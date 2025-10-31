@@ -6,6 +6,8 @@ interface Props {
 }
 
 export const PreviousSearches: FC<Props> = ({ searches, onLabelClicked }) => {
+
+
     return (
         < div className='previous-searches' >
             <h2>Búsquedas previas</h2>

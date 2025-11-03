@@ -1,11 +1,12 @@
-import GifList from './gifs/components/GifList'
+
+import { GifList } from './gifs/components/GifList'
 import { PreviousSearches } from './gifs/components/PreviousSearches'
 import CustomHeader from './shared/components/CustomHeader'
 import SearchBar from './shared/components/SearchBar'
-import { useGif } from './gifs/hooks/useGifs'
+import { useGifs } from './gifs/hooks/useGifs'
 
 const GifsApp = () => {
-    const { handleSearch, previousTerms, handleClick, gifs } = useGif();
+    const { handleSearch, previousTerms, handleTermClicked, gifs } = useGifs();
 
     return (
         <>{/*Header*/}
@@ -16,7 +17,7 @@ const GifsApp = () => {
             />
             {/*Busquedas previas*/}
             <PreviousSearches searches={previousTerms}
-                onLabelClicked={handleClick} />
+                onLabelClicked={handleTermClicked} />
             {/*Gifs*/}
             <GifList gifs={gifs} />
         </>
